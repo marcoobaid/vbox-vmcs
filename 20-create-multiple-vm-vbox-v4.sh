@@ -2,7 +2,7 @@
 set -e
 ##################################################################################################################
 # Author: 	Marco Obaid
-# GitHub:   https://github.com/abumasood
+# GitHub:   https://github.com/marcoobaid
 ##################################################################################################################
 #
 #   Script to Batch-Create Multiple VirtualBox VMs
