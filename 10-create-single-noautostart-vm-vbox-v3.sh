@@ -26,7 +26,8 @@ echo -n "Enter vm name: "
 read myvmname
 
 # Set basic VM specs. Adjust to your preference
-myvmhome="$HOME/VirtualBox VMs/$myvmname"	# Filesystem path where the VM is created
+basefolder="/VBOX/VMs"						# The machine folder path name
+myvmhome="$basefolder/$myvmname"			# Filesystem path where the VM is created
 today=$(date)								# Today's date used to time-stamp VM creation
 cpu_num=2       							# Number of CPUs
 ram_size=4096   							# RAM size in MB
@@ -37,7 +38,7 @@ os_type="ArchLinux_64" 						# Arch Linux 64-bit
 graphics_ctl="vboxvga"						# Options: vboxvga, vboxsvga, or vmsvga. 
 
 # Create and register VM
-VBoxManage createvm --name $myvmname --ostype $os_type --register
+VBoxManage createvm --name $myvmname --basefolder $myvmhome --ostype $os_type --register
 
 # Add Description
 VBoxManage modifyvm $myvmname --description "$myvmname created on $today"
